@@ -1,0 +1,23 @@
+<h1>Listing freezers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @freezers.each do |freezer| %>
+  <tr>
+    <td><%= freezer.name %></td>
+    <td><%= link_to 'Show', freezer %></td>
+    <td><%= link_to 'Edit', edit_freezer_path(freezer) %></td>
+    <td><%= link_to 'Destroy', freezer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Freezer', new_freezer_path %>
