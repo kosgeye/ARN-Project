@@ -14,17 +14,20 @@
   
  
   
-  <div class="field">
+  <div class="field" align = "left">
   <%= select("item", "product_id", Product.all.collect {|p| [ p.description, p.id ] }) %>
+  </div>
+  <div class="field" align = "left">
+  <%= select("item", "freezer_id", Freezer.all.collect {|p| [ p.name, p.id ] }) %>
   </div>
   
 
-  <div class="field">
+  <div class="field" align = "left">
     <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
+    <%= f.text_field :weight, :class => "field"%>
   </div>
  
-  <div class="actions">
+  <div class="actions" align = "left">
     <%= f.submit %>
   </div>
 <% end %>

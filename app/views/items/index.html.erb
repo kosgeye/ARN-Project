@@ -1,6 +1,11 @@
+<head>
+<%= stylesheet_link_tag 'custom', :media => 'screen' %>
+</head>
+<body>
+<%= render 'layouts/header' %>
 <h1>Listing items</h1>
 
-<table>
+<table align="center" border = 5px >
   <tr>
     <th>Description</th>
 	<th>Weight</th>
@@ -11,7 +16,7 @@
   </tr>
 
 <% @items.each do |item| %>
-  <tr>
+  <tr align = "left">
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
@@ -23,5 +28,8 @@
 </table>
 
 <br />
-
+<p align ="center">
 <%= link_to 'New Item', new_item_path %>
+</p>
+<%= render 'layouts/footer' %>
+</body>

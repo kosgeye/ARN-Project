@@ -1,23 +1,25 @@
+
 <p id="notice"><%= notice %></p>
-<p>
+<p align = "left">
   <b>Description:</b>
   <%= @item.product.description %>
 </p>
-<p>
+<p align = "left">
   <b>Price Per Pound:</b>
   <%= @item.product.price %>
 </p>
 
-<p>
+<p align = "left">
   <b>Weight:</b>
   <%= @item.weight %>
 </p>
 
-<p>
+<p align = "left">
   <b>Price:</b>
   <%= @item.price %>
-</p>
+</p align = "left">
 
-
+<p align = "left">
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+</p>
