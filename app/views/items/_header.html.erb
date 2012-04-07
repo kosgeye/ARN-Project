@@ -1,14 +1,12 @@
-<%= stylesheet_link_tag    "custom" %>
-<%= javascript_include_tag "application" %>
 <div id="header">
-
-		<%= link_to image_tag('/images/logo.png', :border=>0)%>
-		<%= link_to image_tag('/images/farm.jpg', :border=>0)%>
+		<a href="index.html" id="logo"><img src="images/logo.png" alt="LOGO" style="margin-bottom:-30px;"/></a>
+		<img src="images/farm.jpg" alt="LOGO" width="960px" height="200px">
 		<div id="navigation">
 			<ul>
-				<li class="first selected"><%= link_to "Inventory", root_path %></li>
-				<li><%= link_to "Products", products_path %></li>
-				<li><%= link_to "Freezers", freezers_path %></li>
+				<li class="first selected"><a href="index.html">Inventory</a></li>
+				<li><a href="about.html">Change Prices</a></li>
+				<li><a href="solutions.html"></a></li>
+				<li><a href="support.html">Sell</a></li>
 			</ul>
 		</div>
 		<div id="search">

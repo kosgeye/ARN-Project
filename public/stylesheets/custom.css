@@ -119,12 +119,11 @@ img {
 #main {
 	background-color: #ffffff;
 	width: 940px;
-	margin: 0px  0 160px;
+	margin: 0px 0px 0 151px;
 	padding: 20px 0 20px 20px;	
 }
+
+
 #main a{
 color:blue;
-}
-#wrapper{
-	margin: 0 0 0 152px;
 }

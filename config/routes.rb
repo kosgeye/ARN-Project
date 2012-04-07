@@ -4,6 +4,8 @@ Farm::Application.routes.draw do
   resources :items
 
   resources :products
+  match '/index3' => 'items#index3'
+  match '/index' => 'items#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

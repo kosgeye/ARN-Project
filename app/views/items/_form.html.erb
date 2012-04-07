@@ -11,9 +11,6 @@
     </div>
   <% end %>
   
-  
- 
-  
   <div class="field" align = "left">
   <%= select("item", "product_id", Product.all.collect {|p| [ p.description, p.id ] }) %>
   </div>
@@ -31,3 +28,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

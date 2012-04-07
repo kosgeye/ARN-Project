@@ -1,16 +1,14 @@
 <div id ="wrapper">
 <div id="main">
 <div class="body">
-<p>
-<%= form_tag("/index3", :method => "get")  do |f| %>
+<div class="field">
+<br />
 
-<div class="field" align = "left">
-  <%= select("item", "freezer_id", Freezer.all.collect {|p| [ p.name, p.id ] }) %>
-</div>
-<%= submit_tag "Select Freezer"%>
-<% end %>
-</p>
-<h1>Listing items</h1>
+ 
+  </div>
+<p>
+
+<h1> &nbsp; Listing items</h1>
 <table align="center" border = 1px width = 900px>
   <tr>
     <th>Description</th>
@@ -20,16 +18,19 @@
     <th></th>
     <th></th>
   </tr>
-
+<%= puts @freezers%>
 <% @items.each do |item| %>
+
   <tr align = "left">
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
+	<td><%= item.freezer_id%></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+
 <%end%>
 </table>
 
@@ -38,8 +39,9 @@
 <%= link_to 'New Item', new_item_path %>
 </p>
 					
-</p>
-</div>
-</div>
+				</p>
+			</div>
+		</div>
 	
 </div>
+</html>

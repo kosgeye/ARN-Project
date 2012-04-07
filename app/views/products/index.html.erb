@@ -1,14 +1,10 @@
 <html>
+<div id = "wrapper">
+<div id="main">
+<div class="body">
+<h1>Listing products</h1>
 
-<head>
-<%= stylesheet_link_tag 'custom', :media => 'screen' %>
-</head>
-
-<body>
-<%= render 'layouts/header' %>
-<h1 style="text-align:center;">Listing products</h1>
-
-<table align="center" >
+<table align="center" border = 1px width = 900px>
   <tr>
     <th>Type</th>
     <th>Description</th>
@@ -36,6 +32,8 @@
 <br />
 
 <!--<%= link_to 'New Product', new_product_path %>-->
-<%= render 'layouts/footer' %>
-</body>
+
+</div>
+</div>
+</div>
 </html>

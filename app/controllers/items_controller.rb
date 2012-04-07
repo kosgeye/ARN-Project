@@ -1,12 +1,23 @@
 class ItemsController < ApplicationController
+layout 'application'
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+	@items = Item.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @items }
+    end
+  end
+  
+  def index3
+	@items = Item.find_all_by_freezer_id(params[:item][:freezer_id])
+	
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @items}
     end
   end
 
