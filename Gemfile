@@ -18,7 +18,7 @@ group :assets do
 end
 group :production do
 gem 'therubyracer-heroku', '0.8.1.pre3'
-gem 'pg', '0.10.0'
+gem 'pg', '0.11'
 end
 
 gem 'jquery-rails'
