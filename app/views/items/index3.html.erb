@@ -9,26 +9,28 @@
 <p>
 
 <h1> &nbsp; Listing items</h1>
-<table align="center" border = 1px width = 900px>
+<table align="center" border = 1px width = 900px class = "imagetable">
   <tr>
     <th>Description</th>
 	<th>Weight</th>
     <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+	<th>Select</th>
   </tr>
 <%= puts @freezers%>
+<%= form_tag("/index2", :method => "get")  do |f| %>
 <% @items.each do |item| %>
 
   <tr align = "left">
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
-	<td><%= item.freezer_id%></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
+	<td><%= check_box_tag 'item_ids[]', item.id -%></td>
   </tr>
 
 <%end%>
@@ -36,7 +38,10 @@
 
 <br />
 <p align ="center">
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Item', new_item_path ,:class => "button"%>
+
+<%= submit_tag "Sell", :class => "button"%>
+<%end%>
 </p>
 					
 				</p>

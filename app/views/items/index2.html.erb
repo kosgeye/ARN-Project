@@ -1,35 +1,53 @@
-<head>
-<%= stylesheet_link_tag 'custom', :media => 'screen' %>
-</head>
-<body>
-<%= render 'layouts/header' %>
-<h1>Listing items</h1>
+<div id ="wrapper">
+<div id="main">
+<div class="body">
+<div class="field">
+<br />
 
-<table align="center" border = 5px >
+ 
+  </div>
+<p>
+
+<h1> &nbsp; Listing items</h1>
+<table align="center" border = 1px width = 900px>
   <tr>
     <th>Description</th>
 	<th>Weight</th>
     <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
+	<th>Freezer</th>
+	<th>Sold</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+	<th>Select</th>
   </tr>
 
 <% @items.each do |item| %>
+
   <tr align = "left">
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
+	<td><%= item.freezer_id%></td>
+	<td><%= item.sold%></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
+	<td><%= check_box_tag 'item_ids[]', item.id -%></td>
   </tr>
-<% end %>
+
+<%end%>
 </table>
 
 <br />
 <p align ="center">
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Item', new_item_path, :class => "button" %>
+
 </p>
-<%= render 'layouts/footer' %>
-</body>
+					
+				</p>
+			</div>
+		</div>
+	
+</div>
+</html>

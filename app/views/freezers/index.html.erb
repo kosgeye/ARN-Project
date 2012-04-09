@@ -3,12 +3,12 @@
 <div class="body">
 <h1>Listing freezers</h1>
 
-<table>
+<table align="center" border = 1px width = 900px class = "imagetable">
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Show Details</th>
+    <th>Edit Freezer</th>
+    <th>Delete Freezer</th>
   </tr>
 
 <% @freezers.each do |freezer| %>
@@ -22,8 +22,9 @@
 </table>
 
 <br />
-
-<%= link_to 'New Freezer', new_freezer_path %>
+<p align = "center">
+<%= link_to 'New Freezer', new_freezer_path,:class => "button" %>
+</p>
 </div>
 </div>
 </div>

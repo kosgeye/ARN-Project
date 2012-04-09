@@ -128,3 +128,56 @@ color:blue;
 #wrapper{
 	margin: 0 0 0 152px;
 }
+#main .button {
+   border-top: 1px solid #96d1f8;
+   background: #a0c5de;
+   background: -webkit-gradient(linear, left top, left bottom, from(#204157), to(#a0c5de));
+   background: -webkit-linear-gradient(top, #204157, #a0c5de);
+   background: -moz-linear-gradient(top, #204157, #a0c5de);
+   background: -ms-linear-gradient(top, #204157, #a0c5de);
+   background: -o-linear-gradient(top, #204157, #a0c5de);
+   padding: 7px 14px;
+   -webkit-border-radius: 9px;
+   -moz-border-radius: 9px;
+   border-radius: 9px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+#main .button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+#main .button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+table.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+table.imagetable th {
+	background:#b5cfd2 url('cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	background:#dcddc0 url('cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}

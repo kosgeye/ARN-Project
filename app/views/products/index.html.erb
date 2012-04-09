@@ -4,7 +4,7 @@
 <div class="body">
 <h1>Listing products</h1>
 
-<table align="center" border = 1px width = 900px>
+<table align="center" border = 1px width = 900px class = "imagetable">
   <tr>
     <th>Type</th>
     <th>Description</th>
@@ -27,8 +27,9 @@
   </tr>
 <% end %>
 </table>
-
-<%= link_to 'New Product', new_product_path %>
+<p align = "center">
+<%= link_to 'New Product', new_product_path, :class => "button"%>
+</p>
 <br />
 
 <!--<%= link_to 'New Product', new_product_path %>-->

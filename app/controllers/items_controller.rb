@@ -20,6 +20,19 @@ layout 'application'
       format.json { render json: @items}
     end
   end
+  def index2
+  @items = Item.find(params[:item_ids])
+  
+  @items.each do |item|
+  item.sold = true
+  item.save
+  end
+  
+  respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @items}
+    end
+  end
 
   # GET /items/1
   # GET /items/1.json

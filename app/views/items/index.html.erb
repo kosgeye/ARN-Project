@@ -6,23 +6,25 @@
 
 <div class="field" align = "left">
   <%= select("item", "freezer_id", Freezer.all.collect {|p| [ p.name, p.id ] }) %>
+
+<%= submit_tag "Select Freezer", :class => "button"%>
 </div>
-<%= submit_tag "Select Freezer"%>
 <% end %>
 </p>
 <h1>Listing items</h1>
-<table align="center" border = 1px width = 900px>
+<table align="center" border = 1px width = 900px class = "imagetable" >
   <tr>
     <th>Description</th>
 	<th>Weight</th>
     <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
+	<th>View Item</th>
+	<th>Edit Item</th>
+	<th>Delete Item</th>
   </tr>
 
 <% @items.each do |item| %>
-  <tr align = "left">
+<%if item.sold != true%>
+  <tr align = "left" >
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
@@ -31,11 +33,12 @@
     <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <%end%>
+<%end%>
 </table>
 
 <br />
 <p align ="center">
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Item', new_item_path, :class => "button" %>
 </p>
 					
 </p>
