@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+before_filter :authorize
 $items = []
 layout 'application'
   # GET /items
