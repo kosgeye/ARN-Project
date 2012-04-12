@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+$items = []
 layout 'application'
   # GET /items
   # GET /items.json
@@ -31,6 +32,22 @@ layout 'application'
   respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @items}
+    end
+  end
+  def sell
+  @found = Item.find_by_weight(params[:weight])
+  if(params.has_key?(:item) && !@found.nil?)
+  @found= Item.find_by_product_id_and_weight(params[:item][:product_id], params[:weight])
+  
+  $items.push(@found)
+  else
+  flash[:notice] = "Enter description and weight to search for item!"
+  end
+  
+  
+  respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: $items}
     end
   end
 

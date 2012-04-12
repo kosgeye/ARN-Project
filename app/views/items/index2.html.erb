@@ -9,17 +9,15 @@
 <p>
 
 <h1> &nbsp; Listing items</h1>
-<table align="center" border = 1px width = 900px>
+<table align="center" border = 1px width = 900px class = "imagetable">
   <tr>
     <th>Description</th>
 	<th>Weight</th>
     <th>Price</th>
-	<th>Freezer</th>
 	<th>Sold</th>
     <th>Show</th>
     <th>Edit</th>
     <th>Delete</th>
-	<th>Select</th>
   </tr>
 
 <% @items.each do |item| %>
@@ -28,12 +26,10 @@
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
-	<td><%= item.freezer_id%></td>
 	<td><%= item.sold%></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
-	<td><%= check_box_tag 'item_ids[]', item.id -%></td>
   </tr>
 
 <%end%>

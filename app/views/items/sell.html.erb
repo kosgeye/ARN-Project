@@ -1,0 +1,52 @@
+<div id ="wrapper">
+<div id="main">
+<div class="body">
+<p>
+<% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+<%= form_tag("/sell", :method => "get")  do |f| %>
+
+<div class="field" align = "left">
+  <%= select("item", "product_id", Product.all.collect {|p| [ p.description, p.id ] }) %>
+</div>
+<div class="field" align = "left">
+<%= label_tag "weight" %><br />
+<%= text_field_tag "weight"%>
+</div>
+<div>
+<%= submit_tag "Search Item", :class => "button"%>
+</div>
+<% end %>
+<table align="center" border = 1px width = 900px class = "imagetable" >
+  <tr>
+    <th>Description</th>
+	<th>Weight</th>
+    <th>Price</th>
+	<th>View Item</th>
+	<th>Edit Item</th>
+	<th>Delete Item</th>
+	<th>Select Item</th>
+  </tr>
+<%unless $items.nil?%>
+<%  $items.collect do |item|%>
+<%if item.sold != true%>
+  <tr align = "left" >
+	<td><%= item.product.description %></td>
+    <td><%= item.weight %></td>
+    <td><%= item.price %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
+	<td><%= check_box_tag 'item_ids[]', item.id -%></td>
+  </tr>
+<%end%>
+<%end%>
+<%end%>
+
+</table>
+
+</div>
+</div>
+	
+</div>
