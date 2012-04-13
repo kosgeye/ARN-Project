@@ -8,36 +8,31 @@
   </div>
 <p>
 
-<h1> &nbsp; Listing items</h1>
+<h1> &nbsp; Sold Items</h1>
 <table align="center" border = 1px width = 900px class = "imagetable">
   <tr>
     <th>Description</th>
 	<th>Weight</th>
     <th>Price</th>
-	<th>Sold</th>
-    <th>Show</th>
-    <th>Edit</th>
-    <th>Delete</th>
   </tr>
-
+  <%@total = 0%>
 <% @items.each do |item| %>
 
   <tr align = "left">
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
-	<td><%= item.sold%></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
+	<%@total = @total + item.price%>
   </tr>
-
 <%end%>
+    <td>Total Price</td>
+	<td></td>
+    <td><%= @total%>
 </table>
 
 <br />
 <p align ="center">
-<%= link_to 'New Item', new_item_path, :class => "button" %>
+
 
 </p>
 					

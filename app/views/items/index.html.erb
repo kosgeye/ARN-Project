@@ -4,7 +4,7 @@
 <p>
 <%= form_tag("/index3", :method => "get")  do |f| %>
 
-<div class="field" align = "left">
+<div class="field" align = "left" style="margin-left:30px">
   <%= select("item", "freezer_id", Freezer.all.collect {|p| [ p.name, p.id ] }) %>
 
 <%= submit_tag "Select Freezer", :class => "button"%>

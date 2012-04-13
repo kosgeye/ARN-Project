@@ -3,15 +3,7 @@ html {
 	font-family: Arial, Helvetica, sans-serif;
 }
 body {
-	/* for W3C-compliant browsers */
-background-image: linear-gradient(top, rgba(12,38,53,255) 0%, rgba(124,141,152,255) 11%, rgba(237,245,251,255) 22%, rgba(222,245,250,255) 37%, rgba(208,245,250,255) 51%, rgba(216,246,234,255) 65%, rgba(224,248,219,255) 78%, rgba(118,143,136,255) 89%, rgba(12,38,53,255) 100%);
-/* for Safari 5.03+ and Chrome 7+ */
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(12,38,53,255)), color-stop(0.11, rgba(124,141,152,255)), color-stop(0.2199999875, rgba(237,245,251,255)), color-stop(0.365, rgba(222,245,250,255)), color-stop(0.509999988, rgba(208,245,250,255)), color-stop(0.645, rgba(216,246,234,255)), color-stop(0.779999998, rgba(224,248,219,255)), color-stop(0.89, rgba(118,143,136,255)), color-stop(1, rgba(12,38,53,255)));
-/* for Firefox 3.6+ */
-background-image: -moz-linear-gradient(top, rgba(12,38,53,255) 0%, rgba(124,141,152,255) 11%, rgba(237,245,251,255) 22%, rgba(222,245,250,255) 37%, rgba(208,245,250,255) 51%, rgba(216,246,234,255) 65%, rgba(224,248,219,255) 78%, rgba(118,143,136,255) 89%, rgba(12,38,53,255) 100%);
-/* for Opera 11.1+ */
-background-image: -o-linear-gradient(top, rgba(12,38,53,255) 0%, rgba(124,141,152,255) 11%, rgba(237,245,251,255) 22%, rgba(222,245,250,255) 37%, rgba(208,245,250,255) 51%, rgba(216,246,234,255) 65%, rgba(224,248,219,255) 78%, rgba(118,143,136,255) 89%, rgba(12,38,53,255) 100%);
-	margin: 0;
+	background: silver;
 }
 img {
 	border: 0;
@@ -122,7 +114,7 @@ img {
 	margin: 0 auto;
 	margin-top: 19px;
 	padding: 10px 0;
-	position: relative;
+	text-align:center;
 }
 #main a{
 color:blue;
@@ -191,4 +183,10 @@ table.imagetable td {
 }
 #signin a{
 	color: white;
+}
+#login {
+display:inline-block;
+
+width:300px;
+text-align:right;
 }

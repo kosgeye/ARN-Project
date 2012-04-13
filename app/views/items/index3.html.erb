@@ -19,8 +19,9 @@
     <th>Delete</th>
 	<th>Select</th>
   </tr>
-<%= puts @freezers%>
 <%= form_tag("/index2", :method => "get")  do |f| %>
+<% @items.each do |item| %>
+<%if item.sold != true%>
 <% @items.each do |item| %>
 
   <tr align = "left">
@@ -33,6 +34,8 @@
 	<td><%= check_box_tag 'item_ids[]', item.id -%></td>
   </tr>
 
+<%end%>
+<%end%>
 <%end%>
 </table>
 
