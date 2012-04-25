@@ -8,6 +8,7 @@ Farm::Application.routes.draw do
   match '/index' => 'items#index'
   match '/index2' => 'items#index2'
   match '/sell' => 'items#sell'
+  match '/reports' => 'items#sold'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

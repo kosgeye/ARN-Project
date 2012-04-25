@@ -20,14 +20,15 @@
 
   <tr align = "left">
 	<td><%= item.product.description %></td>
-    <td><%= item.weight %></td>
-    <td><%= item.price %></td>
+    <td><%= number_with_precision item.weight, :precision => 2 %></td>
+    <td><%= number_with_precision item.price, :precision => 2  %></td>
 	<%@total = @total + item.price%>
   </tr>
 <%end%>
+
     <td>Total Price</td>
 	<td></td>
-    <td><%= @total%>
+    <th><%= number_with_precision @total, :precision => 2%></th>
 </table>
 
 <br />

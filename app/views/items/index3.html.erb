@@ -14,28 +14,25 @@
     <th>Description</th>
 	<th>Weight</th>
     <th>Price</th>
-    <th>Show</th>
     <th>Edit</th>
     <th>Delete</th>
 	<th>Select</th>
   </tr>
+<div class = "freezerName">  
+<h1><%=  @freezer.name%></h>
+</div>
 <%= form_tag("/index2", :method => "get")  do |f| %>
-<% @items.each do |item| %>
-<%if item.sold != true%>
 <% @items.each do |item| %>
 
   <tr align = "left">
 	<td><%= item.product.description %></td>
     <td><%= item.weight %></td>
     <td><%= item.price %></td>
-    <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
 	<td><%= check_box_tag 'item_ids[]', item.id -%></td>
   </tr>
 
-<%end%>
-<%end%>
 <%end%>
 </table>
 
@@ -46,10 +43,10 @@
 <%= submit_tag "Sell", :class => "button"%>
 <%end%>
 </p>
-					
+
 				</p>
 			</div>
 		</div>
-	
+
 </div>
 </html>

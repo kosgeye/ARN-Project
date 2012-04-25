@@ -5,7 +5,7 @@
 <%= form_tag("/index3", :method => "get")  do |f| %>
 
 <div class="field" align = "left" style="margin-left:30px">
-  <%= select("item", "freezer_id", Freezer.all.collect {|p| [ p.name, p.id ] }) %>
+  <%= select("item", "freezer_id", Freezer.all.collect {|p| [ p.name, p.id ] },{:include_blank => 'All Items'}) %>
 
 <%= submit_tag "Select Freezer", :class => "button"%>
 </div>
@@ -17,20 +17,22 @@
     <th>Description</th>
 	<th>Weight</th>
     <th>Price</th>
-	<th>View Item</th>
+	<th>Date Entered</th>
 	<th>Edit Item</th>
 	<th>Delete Item</th>
+	
   </tr>
 
 <% @items.each do |item| %>
 <%if item.sold != true%>
   <tr align = "left" >
 	<td><%= item.product.description %></td>
-    <td><%= item.weight %></td>
-    <td><%= item.price %></td>
-    <td><%= link_to 'Show', item %></td>
+    <td><%= number_with_precision item.weight, :precision => 2 %></td>
+    <td><%= number_with_precision item.price, :precision => 2 %></td>
+	<td><%= item.created_at.strftime("%m-%d-%Y") %>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete %></td>
+	
   </tr>
 <%end%>
 <%end%>

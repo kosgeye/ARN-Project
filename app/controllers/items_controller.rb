@@ -5,16 +5,20 @@ layout 'application'
   # GET /items
   # GET /items.json
   def index
-	@items = Item.all
+	@items = Item.all.sort_by(&:created_at).reverse
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @items }
     end
   end
+
+
   
   def index3
 	@items = Item.find_all_by_freezer_id(params[:item][:freezer_id])
+	@freezer = Freezer.find(params[:item][:freezer_id])
+	
 	
 
     respond_to do |format|
@@ -22,6 +26,7 @@ layout 'application'
       format.json { render json: @items}
     end
   end
+  
   def index2
   @items = Item.find(params[:item_ids])
   
@@ -40,7 +45,7 @@ layout 'application'
   if(params.has_key?(:item) && !@found.nil?)
   @found= Item.find_by_product_id_and_weight(params[:item][:product_id], params[:weight])
   
-  $items.push(@found)
+  @items.push(@found)
   else
   flash[:notice] = "Enter description and weight to search for item!"
   end
@@ -48,7 +53,7 @@ layout 'application'
   
   respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: $items}
+      format.json { render json: @items}
     end
   end
 
@@ -62,6 +67,30 @@ layout 'application'
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @item }
+    end
+  end
+  
+  def sold
+  @items = []
+  @items = Item.find_all_by_sold(true).sort_by(&:updated_at).reverse
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @items }
+    end
+  end
+  def damaged
+  @items = []
+  @items = Item.find(params[:item_ids])
+  
+  @items.each do |item|
+  item.damaged = true
+  item.save
+  end
+  
+  respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @items}
     end
   end
 

@@ -1,0 +1,24 @@
+<div id ="wrapper">
+<div id="main">
+<div class="body">
+<h1>Sold items</h1>
+<table align="center" border = 1px width = 900px class = "imagetable" >
+  <tr>
+    <th>Description</th>
+	<th>Weight</th>
+    <th>Price</th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr align = "left" >
+	<td><%= item.product.description %></td>
+    <td><%= item.weight %></td>
+    <td><%= item.price %></td>
+  </tr>
+<%end%>
+</table>
+
+</div>
+</div>
+	
+</div>
